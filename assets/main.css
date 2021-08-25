@@ -1,0 +1,5 @@
+body {
+  @apply font-sans;
+  @apply bg-gray-light dark:bg-gray-dark;
+  @apply text-gray-dark dark:text-white;
+}
