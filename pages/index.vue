@@ -28,6 +28,7 @@ export default defineComponent({
   <div
     :class="'container h-full flex flex-col items-center justify-center text-center'"
   >
+    <a class="hidden" rel="me" href="https://techhub.social/@arpad">Mastodon</a>
     <h1 class="text-2xl font-bold">Shhh, I'm working here.</h1>
     <p class="mt-4">
       This page will contain stuff in the future. Meanwhile, find me on:
