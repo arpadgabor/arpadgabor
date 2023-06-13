@@ -33,7 +33,7 @@ image: /aurora.jpg
 
 <!--
 
-Apar tot felul de tehnologii, unele mai bune, altele mai proaste. 
+Apar tot felul de tehnologii, unele mai bune, altele mai proaste. O tehnologie care a primit destul de multa atentie, din nou, este Serverless. Ca orice tehnologie, are si ea partile ei bune si proaste. Dar astazi vreau sa vorbesc despre cum putem construi aplicatii si servicii Serverless mult mai usor.
 
 -->
 
@@ -56,6 +56,12 @@ Apar tot felul de tehnologii, unele mai bune, altele mai proaste.
     <img src="/me.jpg" class="object-cover h-full w-full border border-white/25 rounded" />
   </div>
 </section>
+
+<!--
+Ma numesc Arpad dar imi puteti spune Arpi.
+
+Cica sunt CTO la Webamboos, un studio de dezvoltare de produse digitale aici in Timisoara.
+-->
 
 ---
 layout: two-cols
@@ -101,8 +107,8 @@ export const handler = async (event, context) => {
 
   - <img src="/thumbs-up.png" class="w-6 inline" /> Forces you to write modular code
   - <img src="/thumbs-up.png" class="w-6 inline" /> Encourages event-driven architectures
-  - <img src="/thumbs-up.png" class="w-6 inline" /> Scales a lot
   - <img src="/thumbs-up.png" class="w-6 inline" /> Easily integrates with other AWS services
+  - <img src="/thumbs-up.png" class="w-6 inline" /> Scales a lot
   - <img src="/thumbs-up.png" class="w-6 inline" /> Pay only for what you use
 
 </div>
@@ -115,6 +121,18 @@ export const handler = async (event, context) => {
 </div>
 
 </section>
+
+<!-- 
+Ce este Serverless?
+
+Pe scurt, Serverless ne permite sa rulam bucati izolate de cod in raspuns la **evenimente**.
+
+Ce consider eu sunt puncte forte la Serverless e faptul ca te forteaza sa scrii cod modular, bazat pe evenimente. In plus, se integreaza foarte usor cu alte servicii de AWS, scaleaza foarte bine chiar si pentru cei zero utilzatori pe care ii aveti, si platesti doar cat folosesti (adica nimic).
+
+Pe de alta parte tooling-ul de pana acum de la AWS e oribil, e dificil sa testezi codul local si e dificil sa folosesti alte servicii de cloud local.
+
+Si de asta va prezint azi SST.
+-->
 
 ---
 
@@ -141,6 +159,16 @@ In other words...
     Use any other AWS services easily
   </li>
 </ul>
+
+<!--
+SST este un framework open-source pentru construit aplicatii serverless, full-stack pe AWS.
+
+In alte cuvinte, poti:
+- defini infrastructure-as-code direct cu typescript
+- poti rula lambda-uri direct la tine local ca si cum ar fi in cloud
+- poti face debug la lambda-uri folosit editorul tau preferat
+- poti folosi orice alt serviciu AWS fara sa ii faci mock.
+-->
 
 ---
 layout: statement
@@ -177,6 +205,10 @@ export function TimJS({ stack }: StackContext) {
 }
 ```
 
+<!--
+Sa zicem ca facem un site pentru TimJS. Definim intai un "Stack".
+-->
+
 ---
 transition: fade
 ---
@@ -190,11 +222,11 @@ export function TimJS({ stack }: StackContext) {
 
 
 
-
-
-
-
-
+  //               StaticSite
+  //               SolidStartSite
+  //               SvelteKitSite
+  //               RemixSite
+  //               AstroSite
   const site = new NextjsSite(stack, "Website", {
 
 
@@ -203,6 +235,12 @@ export function TimJS({ stack }: StackContext) {
   });
 }
 ```
+
+<!--
+Dupa care adaugam definitia pentru resursele necesare sa facem deploy la un site de NextJS.
+
+SST are suport si pentru site-uri statice simple, gen Vue, React, Angular, etc., sau pentru Astro, SolidStart, SvelteKit, sau Remix.
+-->
 
 ---
 transition: fade
@@ -231,6 +269,10 @@ export function TimJS({ stack }: StackContext) {
 }
 ```
 
+<!--
+Adaugam un domeniu
+-->
+
 ---
 transition: fade
 ---
@@ -244,7 +286,7 @@ export function TimJS({ stack }: StackContext) {
   const api = new Api(stack, 'Api', {
     customDomain: "api.domain.com",
     routes: {
-      "GET /notes": "src/list.main",
+      "GET /speakers": "src/list.main",
     },
 
   })
@@ -258,6 +300,14 @@ export function TimJS({ stack }: StackContext) {
 }
 ```
 
+<!--
+Dar vrem sa facem si un API.
+
+- Il definim folosin construct-ul de `Api`
+- ii punem un domeniu
+- adaugam o ruta pentru get de speakers
+- si pasam la frontend in environment URL-ul spre backend.
+-->
 
 ---
 
@@ -270,7 +320,7 @@ export function TimJS({ stack }: StackContext) {
   const api = new Api(stack, 'Api', {
     customDomain: "api.domain.com",
     routes: {
-      "GET /notes": "src/list.main",
+      "GET /speakers": "src/list.main",
     },
     bind: [stripeSecret]
   })
@@ -297,6 +347,15 @@ console.log(Config.StripeSecret)
 ```
 
 </div>
+
+<!--
+Dar vrem sa vindem si bilete cu Stripe.
+
+- Definim un nou Secret pentru cheia de Stripe
+- Si o putem bind-ui la Api
+
+Asta ne lasa sa accesam acel secret intr-un mod Type-Safe, fara pic de cod extra. SST face totul  automagic.
+-->
 
 ---
 layout: two-cols
@@ -517,4 +576,3 @@ layout: statement
 GitHub `@arpadgabor`
 
 Twitter `@arpad_gabor`
-
