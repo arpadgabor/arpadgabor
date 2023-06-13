@@ -2,13 +2,17 @@
   "name": "@arpadgabor/slides",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
+    "build": "slidev build **/*.md",
+    "dev": "slidev timjs-sst/slides.md",
     "export": "slidev export"
   },
   "dependencies": {
     "@slidev/cli": "^0.42.4",
+    "@slidev/theme-apple-basic": "^0.20.0",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.34.3"
   }
 }

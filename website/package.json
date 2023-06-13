@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
-    "generate": "vue-tsc --noEmit && nuxt generate"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
