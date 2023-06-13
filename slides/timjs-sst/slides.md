@@ -102,8 +102,8 @@ export const handler = async (event, context) => {
 </div>
 <div v-click>
 
-  - <img src="/thumbs-down.png" class="w-6 inline" /> AWS tooling is horrible
-  - <img src="/thumbs-down.png" class="w-6 inline" /> Difficult to debug locally
+  - <img src="/thumbs-down.png" class="w-6 inline" /> AWS-made tooling is horrible
+  - <img src="/thumbs-down.png" class="w-6 inline" /> Difficult to debug and test locally
   - <img src="/thumbs-down.png" class="w-6 inline" /> Hard to use cloud services locally
 
 </div>
@@ -280,10 +280,12 @@ export function TimJS({ stack }: StackContext) {
 
 <div v-click class="absolute top-20 right-14 w-1/3">
 
-Use the secret in your lambdas with type-safety!
+Use the secret in your lambdas with ✨**type-safety**✨!
 
 
 ```ts
+import { Config } from "sst/node/config"
+
 console.log(Config.StripeSecret)
 // No additional code needed
 ```
@@ -486,14 +488,27 @@ Debug lambdas, view logs, run RDS migrations, edit DynamoDB documents, and more.
 
 ---
 
-# Other great things...
+# To recap
 
----
+<v-clicks>
 
-# Go build.
+Serverless is great for building scalable, **event-driven** apps and services.
+
+SST makes all of it **incredibly easy**.
+
+SST provides lots of serverless-ready constructs ready-to-use in your apps.
+
+Build apps fast, with confidence and type-safety.
+
+</v-clicks>
 
 ---
 layout: statement
 ---
 
 # Thank you.
+
+GitHub `@arpadgabor`
+
+Twitter `@arpad_gabor`
+
