@@ -362,30 +362,42 @@ export const needsAuthHandler = ApiHandler(async (event) => {
 
 <div class="flex space-x-8">
 
-<div v-click class="w-1/2">
+<div class="w-1/2">
+
+<v-clicks>
 
 ```ts {lines=false}
 new Bucket(stack, "public");
+```
 
+```ts {lines=false}
 new EventBus(stack, "bus", {
   defaults: {
     retries: 10,
   },
 });
+```
 
+```ts {lines=false}
 new Queue(stack, "queue", {
   consumer: "src/consumer.handler",
 });
+```
 
+```ts {lines=false}
 new Cron(stack, "Cron", {
   schedule: "cron(15 10 * * ? *)",
   job: "src/lambda.main",
 });
 ```
 
+</v-clicks>
+
 </div>
 
-<div v-click class="w-1/2">
+<div class="w-1/2">
+
+<v-clicks>
 
 ```ts {lines=false}
 new Table(stack, "counter", {
@@ -394,12 +406,16 @@ new Table(stack, "counter", {
   },
   primaryIndex: { partitionKey: "counter" },
 });
+```
 
+```ts {lines=false}
 new RDS(stack, "db", {
   engine: "postgresql11.13",
   defaultDatabaseName: "MyDatabase",
 });
+```
 
+```ts {lines=false}
 new WebSocketApi(stack, "Api", {
   routes: {
     $connect: "src/connect.main",
@@ -409,7 +425,7 @@ new WebSocketApi(stack, "Api", {
   },
 });
 ```
-
+</v-clicks>
 
 </div>
 
@@ -419,9 +435,43 @@ new WebSocketApi(stack, "Api", {
 
 # Or any other AWS service!
 
+Use already existing constructs. For example:
+
+- `aws-cdk-ses-domain-identity` to create an AWS SES domain identity and validate it
+- `aws_iam.OpenIdConnectProvider` to create an IAM OIDC provider for secure deployments in CI
+- `aws-cdk-lib/aws-ecs-patterns` to create a Fargate service when you need servers
+
+Or create your own reusable constructs for common use cases.
+
 ---
 
 # Live Lambda Development
+
+<v-clicks>
+
+Creates isolated **cloud environments** for each developer - no need for Local Stack, SAM, mocking, etc.
+
+### Features
+
+**Instant** hot-reloading of your Lambda code with `sst dev`
+
+**Debugging** (i.e. breakpoints) with VS Code (or other IDEs)
+
+**Supports all Lambda triggers** - easily test webhooks, queues, events, etc. with **real AWS services**
+
+**Supports IAM** permissions just like in production
+
+Watches for both lambda and infrastructure changes and deploys them automagically
+
+<div>
+
+<hr />
+
+Read more https://docs.sst.dev/live-lambda-development
+
+</div>
+
+</v-clicks>
 
 ---
 
