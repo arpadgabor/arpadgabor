@@ -483,7 +483,7 @@ View all your stacks in one place.
 
 Debug lambdas, view logs, run RDS migrations, edit DynamoDB documents, and more.
 
-![The SST Console](sst-console-stacks-tab-de8cf99e1632ad2326d234716f353af1.png)
+![The SST Console](sst-console.png)
 
 
 ---
