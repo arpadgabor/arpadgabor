@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir pages
           cd slides
-          pnpm slidev build timjs-sst/slides.md --out ../../pages/timjs-sst --base /arpadgabor/timjs-sst/
+          pnpm slidev build timjs-sst/slides.md --out ../../pages/timjs-sst --base /timjs-sst/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
