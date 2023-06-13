@@ -31,6 +31,12 @@ image: /aurora.jpg
   </div>
 </div>
 
+<!--
+
+Apar tot felul de tehnologii, unele mai bune, altele mai proaste. 
+
+-->
+
 ---
 
 <section class="flex h-full space-x-8">
@@ -483,7 +489,7 @@ View all your stacks in one place.
 
 Debug lambdas, view logs, run RDS migrations, edit DynamoDB documents, and more.
 
-![The SST Console](sst-console.png)
+![The SST Console](/sst-console.png)
 
 
 ---
