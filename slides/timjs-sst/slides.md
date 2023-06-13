@@ -40,7 +40,7 @@ image: /aurora.jpg
 
   You can also call me *Arpi*.
 
-  Tech lead @ **Webamboos**
+  CTO @ **Webamboos**
 
   Doing all kinds of things.
 
@@ -476,6 +476,13 @@ Read more https://docs.sst.dev/live-lambda-development
 ---
 
 # The SST Console
+
+View all your stacks in one place.
+
+Debug lambdas, view logs, run RDS migrations, edit DynamoDB documents, and more.
+
+![The SST Console](sst-console-stacks-tab-de8cf99e1632ad2326d234716f353af1.png)
+
 
 ---
 
