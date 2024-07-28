@@ -1,0 +1,26 @@
+{
+  "name": "@arpadgabor/www",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.13.2",
+    "@nuxt/fonts": "^0.7.1",
+    "@nuxt/icon": "^1.3.1",
+    "@nuxtjs/color-mode": "^3.4.2",
+    "@nuxtjs/seo": "2.0.0-rc.16",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@vueuse/nuxt": "^10.11.0",
+    "nuxt": "^3.12.4",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.1.13"
+  }
+}

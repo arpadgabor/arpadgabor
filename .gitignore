@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 pages/*
+
+# sst
+.sst

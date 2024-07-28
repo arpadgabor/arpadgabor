@@ -3,16 +3,16 @@
   "private": true,
   "scripts": {
     "build": "slidev build **/*.md",
-    "dev": "slidev timjs-sst/slides.md",
+    "dev": "slidev slides/*.md",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.42.4",
-    "@slidev/theme-apple-basic": "^0.20.0",
+    "@slidev/cli": "^0.49.22",
+    "@slidev/theme-apple-basic": "^0.25.1",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.34.3"
+    "playwright-chromium": "^1.45.3"
   }
 }
