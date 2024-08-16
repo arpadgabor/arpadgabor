@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    'nuxt-content-twoslash',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/icon',
   ],
+  css: ['assets/twoslash.css'],
 
   fonts: {
     google: {
@@ -27,4 +29,21 @@ export default defineNuxtConfig({
     preference: 'dark',
     fallback: 'dark',
   },
+
+  content: {
+    highlight: {
+      langs: ['ts'],
+      theme: 'tokyo-night',
+    },
+  },
+  twoslash: {
+    includeNuxtTypes: true,
+    throws: false,
+  },
+  typescript: {
+    tsConfig: {
+      include: ['../../.sst/platform/config.d.ts'],
+    },
+  },
+  build: { transpile: ['shiki'] },
 })

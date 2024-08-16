@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import 'vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="pt-32">

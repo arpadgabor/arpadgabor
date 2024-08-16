@@ -1,0 +1,50 @@
+.v-popper--theme-twoslash .v-popper__inner {
+  --twoslash-popup-bg: theme('colors.dark.DEFAULT');
+  --twoslash-border-color: theme('colors.dark.footer');
+  --shiki-default-bg: theme('colors.dark.DEFAULT');
+  padding: 0.5rem;
+}
+
+.twoslash-floating .v-popper__arrow-container {
+  display: none;
+}
+
+.v-popper--theme-twoslash {
+  p a {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 4px;
+  }
+
+  code pre {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    background-color: var(--shiki-default-bg);
+
+    .line {
+      background: transparent;
+    }
+  }
+
+  h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+}
